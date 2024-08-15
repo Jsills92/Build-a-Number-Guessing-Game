@@ -61,7 +61,7 @@ do
     fi
     # Insert the guess into the guesses table
     INSERT_GUESS=$($PSQL "INSERT INTO guesses (username, secret_number, guess_number) VALUES ('$USERNAME', $SECRET_NUMBER, $GUESS_COUNT)")
-    exit
+    exit 0
   elif [[ $USER_GUESS -lt $SECRET_NUMBER ]]
   then
     echo -e "It's higher than that, guess again:"
